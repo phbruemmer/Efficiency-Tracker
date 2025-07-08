@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login - Efficiency Tracker</title>
-    <link rel="stylesheet" href="../staticfiles/login.css" />
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'login.css' %}" />
   </head>
   <body>
     <nav>
@@ -18,7 +19,8 @@
     <section class="main-auth">
       <div class="auth-form">
         <h3>Login</h3>
-        <form action="/login" method="POST">
+        <form method="POST">
+          {% csrf_token %}
           <input type="text" name="username" placeholder="Username" required />
           <input
             type="password"
@@ -30,7 +32,7 @@
         </form>
         <p>
           Don't have an account?
-          <a href="/templates/register.html" class="special">Register here</a>
+          <a href="/register" class="special">Register here</a>
         </p>
       </div>
     </section>

@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register - Efficiency Tracker</title>
-    <link rel="stylesheet" href="../staticfiles/register.css" />
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'register.css' %}" />
   </head>
   <body>
     <nav>
@@ -18,7 +19,8 @@
     <section class="main-auth">
       <div class="auth-form">
         <h3>Register</h3>
-        <form action="/register" method="POST">
+        <form method="POST">
+          {% csrf_token %}
           <input type="text" name="username" placeholder="Username" required />
           <input type="email" name="email" placeholder="Email" required />
           <input
@@ -37,7 +39,7 @@
         </form>
         <p>
           Already have an account?
-          <a href="/templates/login.html" class="special">Login here</a>
+          <a href="/login" class="special">Login here</a>
         </p>
       </div>
     </section>
