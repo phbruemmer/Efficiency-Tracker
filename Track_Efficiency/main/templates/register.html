@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register - Efficiency Tracker</title>
+    <link rel="stylesheet" href="../staticfiles/register.css" />
+  </head>
+  <body>
+    <nav>
+      <h2>Efficiency Tracker</h2>
+    </nav>
+
+    <header>
+      <h1>Create Your Account</h1>
+    </header>
+
+    <section class="main-auth">
+      <div class="auth-form">
+        <h3>Register</h3>
+        <form action="/register" method="POST">
+          <input type="text" name="username" placeholder="Username" required />
+          <input type="email" name="email" placeholder="Email" required />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            required
+          />
+          <input
+            type="password"
+            name="confirmPassword"
+            placeholder="Confirm Password"
+            required
+          />
+          <button type="submit">Register</button>
+        </form>
+        <p>
+          Already have an account?
+          <a href="/templates/login.html" class="special">Login here</a>
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2025 Efficiency Tracker. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

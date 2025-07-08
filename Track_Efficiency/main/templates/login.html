@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Efficiency Tracker</title>
+    <link rel="stylesheet" href="../staticfiles/login.css" />
+  </head>
+  <body>
+    <nav>
+      <h2>Efficiency Tracker</h2>
+    </nav>
+
+    <header>
+      <h1>Login to Your Account</h1>
+    </header>
+
+    <section class="main-auth">
+      <div class="auth-form">
+        <h3>Login</h3>
+        <form action="/login" method="POST">
+          <input type="text" name="username" placeholder="Username" required />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            required
+          />
+          <button type="submit">Login</button>
+        </form>
+        <p>
+          Don't have an account?
+          <a href="/templates/register.html" class="special">Register here</a>
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2025 Efficiency Tracker. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

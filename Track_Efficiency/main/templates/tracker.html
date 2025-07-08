@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tracker</title>
+    <link rel="stylesheet" href="../staticfiles/tracker.css" />
+  </head>
+  <body>
+    <nav>
+      <h2>Efficiency Tracker</h2>
+      <form action="/logout" method="POST">
+        <button type="submit">Logout</button>
+      </form>
+    </nav>
+
+    <header>
+      <h1>Welcome <span class="special">{{ username }}!</span></h1>
+      <div class="efficiency-diagram">
+        <div id="efficiencyChart" class="chart-placeholder">
+          
+        </div>
+      </div>
+    </header>
+
+    <section class="main-tracker">
+      <div class="create_task">
+        <h3>Create New Task</h3>
+        <form action="/tasks" method="POST">
+            <select name="user">
+                <option value="" disabled selected>Select Category</option>
+                <option value="username">username</option>
+                <option value="username">username</option>
+            </select>
+          <input type="text" name="taskName" placeholder="Task Name" required />
+          <input
+            type="text"
+            name="taskDescription"
+            maxlength="42"
+            placeholder="Short Description"
+          />
+          <input
+            type="number"
+            name="taskDuration"
+            placeholder="Duration (minutes)"
+            required
+            min="1"
+          />
+
+          <button type="submit">Add Task</button>
+        </form>
+      </div>
+
+      <div class="current_tasks">
+        <h3>Current Tasks</h3>
+        <ul id="taskList">
+        </ul>
+      </div>
+
+      <div class="archive">
+        <h3>Archived Tasks</h3>
+        
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2025 Efficiency Tracker. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
